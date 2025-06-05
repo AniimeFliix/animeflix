@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visualizador de Capítulo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #1e1e30;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff4d6d;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .back {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .back a {
+      color: #ff4d6d;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .back a:hover {
+      text-decoration: underline;
+    }
+    .chapter-images img {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Capítulo</h1>
+  <div class="back">
+    <a href="capitulos.html">← Volver a la lista de capítulos</a>
+  </div>
+
+  <div class="chapter-images" id="chapterImages">
+    <!-- Imágenes del capítulo aquí -->
+  </div>
+
+  <script>
+    // Cambia estas URLs por las reales de las imágenes de tus capítulos
+    const chaptersData = {
+      1: [
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img922/3485/qci2tA.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img922/3857/fgPHZQ.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img923/8271/70Ojco.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img924/6407/igiShV.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img923/3483/gCjGPt.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img923/3483/gCjGPt.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img922/5711/Z1CDV0.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img922/5549/ZB6xim.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img924/2074/eLmJlD.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img924/8652/d4m4o3.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img923/9587/gTFoJp.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img922/2492/p04h47.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img924/4720/W76TDi.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img922/2826/KBxO9I.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img924/5036/NccBgQ.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img922/4316/4JY6b5.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img923/1786/q0RmnF.jpg',
+        'https://cdn.statically.io/img/imagizer.imageshack.com/a/img922/1115/U2aaMU.jpg',
+        
+      ],
+      2: [
+        'https://i.imgur.com/2page1.jpg',
+        'https://i.imgur.com/2page2.jpg'
+      ],
+      3: [
+        'https://i.imgur.com/3page1.jpg'
+      ],
+      // Añade más capítulos aquí
+    };
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function loadChapter(num) {
+      const titleEl = document.getElementById('title');
+      const imagesContainer = document.getElementById('chapterImages');
+
+      if (!num || !chaptersData[num]) {
+        titleEl.textContent = 'Capítulo no encontrado';
+        imagesContainer.innerHTML = '<p>No hay imágenes disponibles para este capítulo.</p>';
+        return;
+      }
+
+      titleEl.textContent = `One Punch Man - Capítulo ${num}`;
+      imagesContainer.innerHTML = '';
+
+      chaptersData[num].forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `Página del capítulo ${num}`;
+        imagesContainer.appendChild(img);
+      });
+    }
+
+    const chapterNum = getQueryParam('num');
+    loadChapter(chapterNum);
+  </script>
+</body>
+</html>
