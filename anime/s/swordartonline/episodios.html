@@ -41,7 +41,7 @@ h1 {
 }
 
 .anime-header img {
-  width: 420px;
+  width: 650px;
   border-radius: 12px;
   box-shadow: 0 0 20px #ff4d6d;
   margin-bottom: 2rem;
@@ -119,14 +119,14 @@ h1 {
   </style>
 </head>
 <body>
-  <h1>Episodios de Jujutsu Kaisen</h1>
+  <h1>Episodios de Sword Art Online</h1>
   <div class="back">
     <a href="../../../anime.html">← Volver al catálogo</a>
   </div>
   <div class="anime-header">
-    <img src="https://www.selecta-vision.com/wp-content/uploads/2025/02/JujutsuBD.jpg" alt="Naruto" />
+    <img src="https://alfabetajuega.com/hero/2023/03/sword-art-online-anime.jpg?width=1200" alt="Naruto" />
   </div>
-  <h1>Temporada 1</h1><br>
+  <h1>Temporada 1<br><br>
   <iframe
   id="iframePlayer"
   src=""
@@ -134,30 +134,42 @@ h1 {
 ></iframe>
 
 <video id="videoPlayer" controls preload="metadata" style="display:none;">
-  <!-- Las fuentes se cargan dinámicamente al cambiar a otro episodio -->
   Tu navegador no soporta video.
 </video>
 
-  <iframe id="iframePlayer" src="" allowfullscreen></iframe>
-
   <div class="episode-list" role="list">
-    <button onclick="changeVideo(this, 1)">Episodio 1<br>Sukuna de la Doble Cara</button>
-    <button onclick="changeVideo(this, 2)">Episodio 2<br>Por Mí</button>
-    <button onclick="changeVideo(this, 3)">Episodio 3<br>Chica de Acero</button>    
+    <button onclick="changeVideo(this, 1)">Episodio 1<br>El mundo de las espadas</button>
+<button onclick="changeVideo(this, 2)">Episodio 2<br>Beater</button>
+<button onclick="changeVideo(this, 3)">Episodio 3<br>El reno de la nariz roja</button>
+<button onclick="changeVideo(this, 4)">Episodio 4<br>El Espadachín Negro</button>
+<button onclick="changeVideo(this, 5)">Episodio 5<br>Asesinato en la zona segura</button>
+
+
+
   </div>
 
   <script>
-    const videos = {
-      1: {
-        iframeSrc: "https://mega.nz/embed/87VH3RwS#Tff8UnGRRZyzuL4TLJlwYPasVibJ4ro5S22gl_lU2wg"
-      },
-      2: {
-        iframeSrc: "https://mega.nz/embed/JnVXiLZJ#sJrbOLgtDKg3DYFEKUaW-kII0frm5gOhRWFBVgY0nAs"
-      },
-      3: {
-        iframeSrc: "https://mega.nz/embed/cu1UCRBD#LxKvynN0q8YLLpRfLDhFeHXcvLi2jNSyv1SGS7j85sQ"
-      },
-    };
+   const videos = {
+  1: {
+    iframeSrc: "https://mega.nz/embed/wp8UQD7K#8hJYgksxcVZhsQNAAFNmYR30U1SVfz3hugHG2W3orEQ"
+  },
+  2: {
+    iframeSrc: "https://mega.nz/embed/chFBGa4S#39M4aKbD2sssQ_wXNvZAQAejoqwG0VqTE5Z8AjEx0x4"
+  },
+  3: {
+    iframeSrc: "https://mega.nz/embed/5xEF2RJa#8z_Ysmd54JFNziS4glg9gY_pm_qW8go7ucV8NupJv0o"
+  },
+  4: {
+    iframeSrc: "https://mega.nz/embed/R99TyLIY#A5XwCEUBOZh3vtRITYGnpotn6F-3o8D1kgw0DmQ0Hhs"
+  },
+  5: {
+    iframeSrc: "https://mega.nz/embed/Noty0QiD#oJeHq-43FRI1r_A-MZ8mWHxgFiOHbzWkBcTEG4jbK_0"
+  }
+};
+
+
+
+
 
     function changeVideo(button, episode) {
       const videoPlayer = document.getElementById('videoPlayer');
@@ -189,6 +201,6 @@ h1 {
       button.classList.add('active');
     }
   </script>
-  <h1>Temporada 2</h1><br>
+  <h1>Temporada 2<br><br>
 </body>
 </html>

@@ -41,7 +41,7 @@ h1 {
 }
 
 .anime-header img {
-  width: 420px;
+  width: 650px;
   border-radius: 12px;
   box-shadow: 0 0 20px #ff4d6d;
   margin-bottom: 2rem;
@@ -119,14 +119,14 @@ h1 {
   </style>
 </head>
 <body>
-  <h1>Episodios de Jujutsu Kaisen</h1>
+  <h1>Episodios de Tokyo Ghoul</h1>
   <div class="back">
     <a href="../../../anime.html">← Volver al catálogo</a>
   </div>
   <div class="anime-header">
-    <img src="https://www.selecta-vision.com/wp-content/uploads/2025/02/JujutsuBD.jpg" alt="Naruto" />
+    <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2021/07/tokyo-ghoul-poster-anime.jpg?q=70&fit=contain&w=1200&h=628&dpr=1" alt="Naruto" />
   </div>
-  <h1>Temporada 1</h1><br>
+  <h1>Temporada 1<br><br>
   <iframe
   id="iframePlayer"
   src=""
@@ -134,30 +134,66 @@ h1 {
 ></iframe>
 
 <video id="videoPlayer" controls preload="metadata" style="display:none;">
-  <!-- Las fuentes se cargan dinámicamente al cambiar a otro episodio -->
   Tu navegador no soporta video.
 </video>
 
-  <iframe id="iframePlayer" src="" allowfullscreen></iframe>
-
   <div class="episode-list" role="list">
-    <button onclick="changeVideo(this, 1)">Episodio 1<br>Sukuna de la Doble Cara</button>
-    <button onclick="changeVideo(this, 2)">Episodio 2<br>Por Mí</button>
-    <button onclick="changeVideo(this, 3)">Episodio 3<br>Chica de Acero</button>    
+    <button onclick="changeVideo(this, 1)">Episodio 1<br>Tragedia</button>
+    <button onclick="changeVideo(this, 2)">Episodio 2<br>Incubación</button>
+    <button onclick="changeVideo(this, 3)">Episodio 3<br>Paloma</button>
+    <button onclick="changeVideo(this, 4)">Episodio 4<br>Cena</button>
+    <button onclick="changeVideo(this, 5)">Episodio 5<br>Cicatrices</button>
+    <button onclick="changeVideo(this, 6)">Episodio 6<br>Aguacero</button>
+    <button onclick="changeVideo(this, 7)">Episodio 7<br>Cautiverio</button>
+    <button onclick="changeVideo(this, 8)">Episodio 8<br>Circular</button>
+    <button onclick="changeVideo(this, 9)">Episodio 9<br>Jaula</button>
+    <button onclick="changeVideo(this, 10)">Episodio 10<br>Aogiri</button>
+    <button onclick="changeVideo(this, 11)">Episodio 11<br>Espíritus Elevados</button>
+    <button onclick="changeVideo(this, 12)">Episodio 12<br>Ghoul</button>
+
   </div>
 
   <script>
     const videos = {
-      1: {
-        iframeSrc: "https://mega.nz/embed/87VH3RwS#Tff8UnGRRZyzuL4TLJlwYPasVibJ4ro5S22gl_lU2wg"
-      },
-      2: {
-        iframeSrc: "https://mega.nz/embed/JnVXiLZJ#sJrbOLgtDKg3DYFEKUaW-kII0frm5gOhRWFBVgY0nAs"
-      },
-      3: {
-        iframeSrc: "https://mega.nz/embed/cu1UCRBD#LxKvynN0q8YLLpRfLDhFeHXcvLi2jNSyv1SGS7j85sQ"
-      },
-    };
+  1: {
+    iframeSrc: "https://mega.nz/embed/lrN00BRD#Q2NdNW-6qq27q9pX_bGHQh-TeNGvYpl9oFwffxq0PvU"
+  },
+  2: {
+    iframeSrc: "https://mega.nz/embed/E6t1AawR#sgM99C_j8-T1nTwX56Z2zM7lAMUMxhQDUdbdGvKrhao"
+  },
+  3: {
+    iframeSrc: "https://mega.nz/embed/Bv912JoQ#1fr1v0RMozCwvE1ExaUy-ELam80TKMMlE_K5gvgQeKU"
+  },
+  4: {
+    iframeSrc: "https://mega.nz/embed/47lRUJra#Lgu10RFgF1KYDRCHCKNro2iquDTXFYlrtW2OYQmSrEI"
+  },
+  5: {
+    iframeSrc: "https://mega.nz/embed/h2EBXJrJ#Nc9433XteKsAgIb_DfWPrpePrXPUVMEknXMztYsTmro"
+  },
+  6: {
+    iframeSrc: "https://mega.nz/embed/h2kTnK7Y#0AayV0im14L7JvE8DRkwUqCh8WMYcLksJa3stJ9hwFc"
+  },
+  7: {
+    iframeSrc: "https://mega.nz/embed/9uNkEaCR#Yu-1TaMP2xdHoS7zGaOUjCGtNXkcr6efpXTG-_0vkDk"
+  },
+  8: {
+    iframeSrc: "https://mega.nz/embed/Fmsh0CKD#yJRxgc_OO_RYLmsUuVaQq6WVq9czjHlfMZVKcY1QH50"
+  },
+  9: {
+    iframeSrc: "https://mega.nz/embed/omFygApa#FzeqmR6rJWPHcmpnRNatiiN0uyRlQB-iswCx8K1uh5w"
+  },
+  10: {
+    iframeSrc: "https://mega.nz/embed/0qdUHBTa#ITVzgrtcIqZ6gU4uMEGdZfAtyW9LkyTQfNzqDqFpXw4"
+  },
+  11: {
+    iframeSrc: "https://mega.nz/embed/U70SmCSJ#i8ufya8dMWdHjBbQkjovKofPgtN2-B5YH5XbRGKRRU8"
+  },
+  12: {
+    iframeSrc: "https://mega.nz/embed/l6MCyJiR#PYr1KSzQ0GH5jFX4YBOSO316L5-5RXQJkytGZV7bvgk"
+  }
+};
+
+
 
     function changeVideo(button, episode) {
       const videoPlayer = document.getElementById('videoPlayer');
@@ -189,6 +225,6 @@ h1 {
       button.classList.add('active');
     }
   </script>
-  <h1>Temporada 2</h1><br>
+  <h1>Temporada 2<br><br>
 </body>
 </html>

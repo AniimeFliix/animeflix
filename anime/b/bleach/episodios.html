@@ -41,7 +41,7 @@ h1 {
 }
 
 .anime-header img {
-  width: 420px;
+  width: 350px;
   border-radius: 12px;
   box-shadow: 0 0 20px #ff4d6d;
   margin-bottom: 2rem;
@@ -119,14 +119,14 @@ h1 {
   </style>
 </head>
 <body>
-  <h1>Episodios de Jujutsu Kaisen</h1>
+  <h1>Episodios de Bleach</h1>
   <div class="back">
     <a href="../../../anime.html">← Volver al catálogo</a>
   </div>
   <div class="anime-header">
-    <img src="https://www.selecta-vision.com/wp-content/uploads/2025/02/JujutsuBD.jpg" alt="Naruto" />
+    <img src="https://pics.filmaffinity.com/Bleach_Serie_de_TV-235942666-large.jpg" alt="Naruto" />
   </div>
-  <h1>Temporada 1</h1><br>
+  <h1>Temporada 1<br><br>
   <iframe
   id="iframePlayer"
   src=""
@@ -134,30 +134,48 @@ h1 {
 ></iframe>
 
 <video id="videoPlayer" controls preload="metadata" style="display:none;">
-  <!-- Las fuentes se cargan dinámicamente al cambiar a otro episodio -->
   Tu navegador no soporta video.
 </video>
 
-  <iframe id="iframePlayer" src="" allowfullscreen></iframe>
-
   <div class="episode-list" role="list">
-    <button onclick="changeVideo(this, 1)">Episodio 1<br>Sukuna de la Doble Cara</button>
-    <button onclick="changeVideo(this, 2)">Episodio 2<br>Por Mí</button>
-    <button onclick="changeVideo(this, 3)">Episodio 3<br>Chica de Acero</button>    
+    <button onclick="changeVideo(this, 1)">Episodio 1<br>El día en que me convertí en Shinigami</button>
+<button onclick="changeVideo(this, 2)">Episodio 2<br>El trabajo de un Shinigami</button>
+<button onclick="changeVideo(this, 3)">Episodio 3<br>Deseo del hermano mayor, deseo de la hermana menor</button>
+<button onclick="changeVideo(this, 4)">Episodio 4<br>El periquito maldito</button>
+<button onclick="changeVideo(this, 5)">Episodio 5<br>¡Derrota al enemigo invisible!</button>
+<button onclick="changeVideo(this, 6)">Episodio 6<br>¡Lucha a muerte! Ichigo vs Ichigo</button>
+<button onclick="changeVideo(this, 7)">Episodio 7<br>Saludos de un león de peluche</button>
+
+
   </div>
 
   <script>
     const videos = {
-      1: {
-        iframeSrc: "https://mega.nz/embed/87VH3RwS#Tff8UnGRRZyzuL4TLJlwYPasVibJ4ro5S22gl_lU2wg"
-      },
-      2: {
-        iframeSrc: "https://mega.nz/embed/JnVXiLZJ#sJrbOLgtDKg3DYFEKUaW-kII0frm5gOhRWFBVgY0nAs"
-      },
-      3: {
-        iframeSrc: "https://mega.nz/embed/cu1UCRBD#LxKvynN0q8YLLpRfLDhFeHXcvLi2jNSyv1SGS7j85sQ"
-      },
-    };
+  1: {
+    iframeSrc: "https://mega.nz/embed/lUFUnbrC#KfA1BW1Aw0zmuL-HDNj3W86Z-C59V_svmq0OhBxHG2k"
+  },
+  2: {
+    iframeSrc: "https://mega.nz/embed/5NEQgL5B#YiKkgFn85d43LyVEXrOYfKGmAF0SsOB0K8h-AfPK6tM"
+  },
+  3: {
+    iframeSrc: "https://mega.nz/embed/UUV0xTxI#LsXVzX1kUKEyS2juKnXg9e1qv59Cu5pzdU4cET2nCyY"
+  },
+  4: {
+    iframeSrc: "https://mega.nz/embed/AVNUyRID#esTQnVdqz9AF47mJpjsL9qSd6nSoCNiDMHY21TR7tHE"
+  },
+  5: {
+    iframeSrc: "https://mega.nz/embed/1h9XFJzS#YkjJVakvTpXw3vecEVGMJD3GszovE6sCWaiHDKFgbXE"
+  },
+  6: {
+    iframeSrc: "https://mega.nz/embed/o1sjHayQ#KQeLnGC1PofUlN4B1q_-GXun1aRBaIJQq1Syu8wqLWc"
+  },
+  7: {
+    iframeSrc: "https://mega.nz/embed/QwNkECqJ#Aze_UmczHrj8Tz6NWcXV4zgfkzuOqwuWzUllJbyI3LE"
+  }
+};
+
+
+
 
     function changeVideo(button, episode) {
       const videoPlayer = document.getElementById('videoPlayer');
@@ -189,6 +207,6 @@ h1 {
       button.classList.add('active');
     }
   </script>
-  <h1>Temporada 2</h1><br>
+  <h1>Temporada 2<br><br>
 </body>
 </html>
