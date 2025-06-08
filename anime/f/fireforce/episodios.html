@@ -41,7 +41,7 @@ h1 {
 }
 
 .anime-header img {
-  width: 520px;
+  width: 350px;
   border-radius: 12px;
   box-shadow: 0 0 20px #ff4d6d;
   margin-bottom: 2rem;
@@ -119,14 +119,14 @@ h1 {
   </style>
 </head>
 <body>
-  <h1>Episodios de Shigatsu Wa Kimi No Uso</h1>
+  <h1>Episodios de Fire Force</h1>
   <div class="back">
     <a href="../../../anime.html">← Volver al catálogo</a>
   </div>
   <div class="anime-header">
-    <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2024/04/09/your-lie-in-april-2014.png" alt="Naruto" />
+    <img src="https://m.media-amazon.com/images/M/MV5BZWZlMTFjNDgtYTdkOC00MmYxLTk0YmEtZGQ4NmE5MTM3OTg0XkEyXkFqcGc@._V1_.jpg" alt="Naruto" />
   </div>
-
+  <h1>Temporada 1 <br><br>
   <iframe
   id="iframePlayer"
   src=""
@@ -134,30 +134,36 @@ h1 {
 ></iframe>
 
 <video id="videoPlayer" controls preload="metadata" style="display:none;">
-  <!-- Las fuentes se cargan dinámicamente al cambiar a otro episodio -->
   Tu navegador no soporta video.
 </video>
 
-  <iframe id="iframePlayer" src="" allowfullscreen></iframe>
-
   <div class="episode-list" role="list">
-    <button onclick="changeVideo(this, 1)">Episodio 1<br>Monótono • Colorido</button>
-    <button onclick="changeVideo(this, 2)">Episodio 2<br>Amigo A</button>
-    <button onclick="changeVideo(this, 3)">Episodio 3<br>En la primavera</button>    
+    <button onclick="changeVideo(this, 1)">Episodio 1<br>Shinra Kusakabe se enlista</button>
+<button onclick="changeVideo(this, 2)">Episodio 2<br>Corazón de soldado de fuego</button>
+<button onclick="changeVideo(this, 3)">Episodio 3<br>Juegos de novatos</button>
+<button onclick="changeVideo(this, 4)">Episodio 4<br>El héroe y la princesa</button>
+<button onclick="changeVideo(this, 5)">Episodio 5<br>Comienza la batalla</button>
+<button onclick="changeVideo(this, 6)">Episodio 6<br>La chispa de la promesa</button>
+<button onclick="changeVideo(this, 7)">Episodio 7<br>Comienza la investigación en la primera</button>
+<button onclick="changeVideo(this, 8)">Episodio 8<br>Insectos infernales</button>
+<button onclick="changeVideo(this, 9)">Episodio 9<br>Malicia propagada</button>
+<button onclick="changeVideo(this, 10)">Episodio 10<br>La promesa</button>
+
   </div>
 
   <script>
-    const videos = {
-      1: {
-        iframeSrc: "https://mega.nz/embed/hH9xxI6D#Ol3xG4oHA8TQf5y7VhOV3Aas3JHFVpwFZ9JeUcW2I3U"
-      },
-      2: {
-        iframeSrc: "https://mega.nz/embed/Me11xLBA#nXra0gF3ywA1EpZySKZtg0Z-zx06JcOtbtCTv_HFZ6o"
-      },
-      3: {
-        iframeSrc: "https://mega.nz/embed/4G8wwAzb#Cv5HhIUCz9jBDtPcFOErHfmsCd3eqbe81d9gMvsKlSw"
-      },
-    };
+   const videos = {
+  1: { iframeSrc: "https://mega.nz/embed/xXsAWRTT#0emGMr2UnOV2FgmmyxgnxJnoM4wSVSLTY5C5d4LWzMI" },
+  2: { iframeSrc: "https://mega.nz/embed/cCtWwazS#rs-pc6ryKMOGomrt5TSxWKk8MWGQz0ASnF3a_ztWOqU" },
+  3: { iframeSrc: "https://mega.nz/embed/4WNDzYSI#EQ6zVVaJ0QQi5GS0hLJweDdvBuCw4g5D9NLH3UPLHEc" },
+  4: { iframeSrc: "https://mega.nz/embed/dCMAHTCA#ERV3Lwv8sp8_uRUGiVmvrKHHFNJFUaPS9NIjaf7hfoU" },
+  5: { iframeSrc: "https://mega.nz/embed/Ve8RST4J#piIdR6fv4F6DCU-75WO2IxdGFBJDJgo9wSWIr8NoKNM" },
+  6: { iframeSrc: "https://mega.nz/embed/kDNGwCCB#M6bA6CbDeVHYqjrAQgGVNWQpsC2yFWyHXjF5064opcE" },
+  7: { iframeSrc: "https://mega.nz/embed/kbElELyD#IZSqrT8cQHoTry2oLxcbAww9W_uTacNUat7Zx2Sr2V0" },
+  8: { iframeSrc: "https://mega.nz/embed/3jQ12KoB#Ubs2wNz28UDL3mw_8QbOyLlvanxWH3c7qkpovj5LdsU" },
+  9: { iframeSrc: "https://mega.nz/embed/eiQ1RYxL#HwP0tDpzivK1FtQYRKscPXIlbra1bvbcvSmejqgmoVY" },
+  10: { iframeSrc: "https://mega.nz/embed/HiADSaKS#_xfvANwuFie966JirvecZLHeKeln6K6SnSXlDKrT9VY" },
+};
 
     function changeVideo(button, episode) {
       const videoPlayer = document.getElementById('videoPlayer');
@@ -189,5 +195,6 @@ h1 {
       button.classList.add('active');
     }
   </script>
+  <h1><br><br>
 </body>
 </html>
