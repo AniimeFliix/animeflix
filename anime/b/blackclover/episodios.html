@@ -8,114 +8,134 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
-  background-color: #1e1e30;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-  padding: 2rem;
-  text-align: center;
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      background-color: #1e1e30;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      padding: 2rem;
+      text-align: center;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-h1 {
-  font-family: 'Orbitron', sans-serif;
-  color: #ff4d6d;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 8px #ff4d6d;
-}
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff4d6d;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 8px #ff4d6d;
+    }
 
-.back a {
-  color: #ff4d6d;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-.back a:hover {
-  color: #ff758c;
-}
+    .back a {
+      color: #ff4d6d;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    .back a:hover {
+      color: #ff758c;
+    }
 
-.anime-header img {
-  width: 320px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #ff4d6d;
-  margin-bottom: 2rem;
-  transition: transform 0.3s ease;
-}
-.anime-header img:hover {
-  transform: scale(1.05);
-}
+    .anime-header img {
+      width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ff4d6d;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .anime-header img:hover {
+      transform: scale(1.05);
+    }
 
-#videoPlayer, #iframePlayer {
-  width: 90%;
-  max-width: 900px;
-  border-radius: 15px;
-  box-shadow: 0 0 30px #ff4d6d;
-  margin-bottom: 2.5rem;
-  outline: none;
-  background-color: #000;
-}
+    .player-container {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
 
-#iframePlayer {
-  height: 506px; /* 16:9 ratio for 900px width */
-  border: none;
-  display: none;
-  margin-left: auto;
-  margin-right: auto;
-}
+    #videoPlayer, #iframePlayer {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 30px #ff4d6d;
+      outline: none;
+      background-color: #000;
+    }
 
-#videoPlayer {
-  display: block;
-}
+    #iframePlayer {
+      height: 506px; 
+      border: none;
+      display: none;
+    }
 
-.episode-list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.2rem;
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto 3rem auto;
-}
+    #videoPlayer {
+      display: none;
+    }
 
-.episode-list button {
-  background-color: #2a2a40;
-  border: 2px solid transparent;
-  border-radius: 15px;
-  padding: 1.2rem 1rem;
-  color: #ff4d6d;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-  white-space: normal;
-  box-shadow: 0 0 10px #000;
-  font-size: 1rem;
-  line-height: 1.3;
-}
-.episode-list button:hover,
-.episode-list button.active {
-  background-color: #ff4d6d;
-  border-color: #ff758c;
-  color: #1e1e30;
-  box-shadow: 0 0 15px #ff758c;
-}
+    .episode-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.2rem;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto 3rem auto;
+      padding-top: 20px;
+    }
 
-@media (max-width: 1000px) {
-  .episode-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+    .episode-list button {
+      background-color: #2a2a40;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      padding: 1.2rem 1rem;
+      color: #ff4d6d;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: normal;
+      box-shadow: 0 0 10px #000;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+    .episode-list button:hover,
+    .episode-list button.active {
+      background-color: #ff4d6d;
+      border-color: #ff758c;
+      color: #1e1e30;
+      box-shadow: 0 0 15px #ff758c;
+      transform: translateY(-3px);
+    }
 
-@media (max-width: 600px) {
-  .episode-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    @media (max-width: 1000px) {
+      .episode-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
+    @media (max-width: 600px) {
+      .episode-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .anime-header img {
+        width: 100%;
+      }
+      
+      .player-container {
+        width: 100%;
+      }
+      
+      #iframePlayer {
+        height: 300px;
+      }
+    }
+
+    
+    .video-anchor {
+      scroll-margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -124,39 +144,49 @@ h1 {
     <a href="../../../anime.html">← Volver al catálogo</a>
   </div>
   <div class="anime-header">
-    <img src="https://m.media-amazon.com/images/M/MV5BZmZkZjNhMWMtM2U0Mi00MjdlLTk3NmMtMTMwZjgwOTJmODMzXkEyXkFqcGc@._V1_.jpg" alt="Naruto" />
+    <img src="https://m.media-amazon.com/images/M/MV5BZmZkZjNhMWMtM2U0Mi00MjdlLTk3NmMtMTMwZjgwOTJmODMzXkEyXkFqcGc@._V1_.jpg" alt="Shingeki No Kyojin" />
   </div>
+  
+  
+  <div class="player-container video-anchor" id="playerTop">
+    <h1>Temporada 1</h1>
+    <h1>Capitulo 1</h1>
+    <iframe
+      id="iframePlayer"
+      src=""
+      allowfullscreen
+    ></iframe>
 
-  <iframe
-  id="iframePlayer"
-  src="https://mega.nz/embed/OThHVCpC#LkFWCe9p65QAuICndbx1ENeYo9wVxOm7FcNvs-cNXfU"
-  allowfullscreen
-></iframe>
-
-<video id="videoPlayer" controls preload="metadata" style="display:none;">
-  <!-- Las fuentes se cargan dinámicamente al cambiar a otro episodio -->
-  Tu navegador no soporta video.
-</video>
-
-  <iframe id="iframePlayer" src="" allowfullscreen></iframe>
+    <video id="videoPlayer" controls preload="metadata">
+      Tu navegador no soporta video.
+    </video>
+  </div>
 
   <div class="episode-list" role="list">
     <button onclick="changeVideo(this, 1)">Episodio 1<br>Asta y Yuno</button>
     <button onclick="changeVideo(this, 2)">Episodio 2<br>La Promesa del Chico</button>
-    <button onclick="changeVideo(this, 3)">Episodio 3<br>¡Hacia la Capital del Reino del Trébol!</button>    
+    <button onclick="changeVideo(this, 3)">Episodio 3<br>¡Hacia la Capital del Reino del Trébol!</button>
+    <button onclick="changeVideo(this, 4)">Episodio 4<br>El Examen de Caballería</button>
+<button onclick="changeVideo(this, 5)">Episodio 5<br>El Camino Hacia Ser Rey Mago</button>
+<button onclick="changeVideo(this, 6)">Episodio 6<br>Los Toro Negro</button>
+<button onclick="changeVideo(this, 7)">Episodio 7<br>La Otra Novata</button>
+<button onclick="changeVideo(this, 8)">Episodio 8<br>¡Vamos! ¡Vamos! La Primera Misión</button>
+<button onclick="changeVideo(this, 9)">Episodio 9<br>Bestias</button>
+<button onclick="changeVideo(this, 10)">Episodio 10<br>Los Que Protegen</button>
   </div>
 
   <script>
     const videos = {
-      1: {
-        iframeSrc: "https://mega.nz/embed/OThHVCpC#LkFWCe9p65QAuICndbx1ENeYo9wVxOm7FcNvs-cNXfU"
-      },
-      2: {
-        iframeSrc: "https://mega.nz/embed/DfBxmKLJ#1Iyzha-6z5CCmMiKLcHj7S3lU0d3l6qJzAaMX7mX7rA"
-      },
-      3: {
-        iframeSrc: "https://mega.nz/embed/6SgXjYqL#jmdiTaBtXhtreTYm05tveTs6A-vdkjGTEPEQUHa9X2I"
-      },
+      1: { iframeSrc: "https://mega.nz/embed/OThHVCpC#LkFWCe9p65QAuICndbx1ENeYo9wVxOm7FcNvs-cNXfU" },
+      2: { iframeSrc: "https://mega.nz/embed/DfBxmKLJ#1Iyzha-6z5CCmMiKLcHj7S3lU0d3l6qJzAaMX7mX7rA" },
+      3: { iframeSrc: "https://mega.nz/embed/6SgXjYqL#jmdiTaBtXhtreTYm05tveTs6A-vdkjGTEPEQUHa9X2I" },
+      4: { iframeSrc: "https://mega.nz/embed/VesnCZSA#f2_M28Slvjj13DbIvYx_sdMfXcoFX636d-qkqULDk7I" },
+  5: { iframeSrc: "https://mega.nz/embed/kDcnCJ7A#EJsuFcoBmx7i4Zg2nOzmCwo6UTVo5DR0tI5Y0dRoCQE" },
+  6: { iframeSrc: "https://mega.nz/embed/QXthwYAa#WFoZhrVYJCtIrN4pdCvtXOf9mSFYtD8G3fTIJICOHT0" },
+  7: { iframeSrc: "https://mega.nz/embed/JbdDQDyJ#9HWAT1lT5L4oSbEsd90ZEGQO2HsRHG6kjOdSEr6ldAo" },
+  8: { iframeSrc: "https://mega.nz/embed/5X0FlbZS#RhYhAR_fBNjEy2z47DA2CiKlP85B8ElT8tjNdtqkC6o" },
+  9: { iframeSrc: "https://mega.nz/embed/0PtGQSTL#4e_4IeXZ8T3oU5cmXXPxTfA_T7d_FJeoEdZVSWU0h1Y" },
+  10: { iframeSrc: "https://mega.nz/embed/sal3ARyZ#I1XyQzB_MKVnlgP4PcAihTfPiqw3NWTUqUzicm15RMk" },
     };
 
     function changeVideo(button, episode) {
@@ -185,9 +215,29 @@ h1 {
         videoPlayer.play();
       }
 
-      document.querySelectorAll('.episode-list button').forEach(btn => btn.classList.remove('active'));
+      
+      document.querySelectorAll('.episode-list button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      
       button.classList.add('active');
+      
+      
+      document.getElementById('playerTop').scrollIntoView({
+        behavior: 'smooth'
+      });
     }
+
+    
+    window.addEventListener('load', function() {
+      if(window.location.hash) {
+        setTimeout(() => {
+          document.getElementById('playerTop').scrollIntoView();
+        }, 100);
+      }
+    });
   </script>
+  <h1>Temporada 2</h1>
 </body>
 </html>

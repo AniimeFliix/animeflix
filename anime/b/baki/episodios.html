@@ -8,114 +8,134 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
-  background-color: #1e1e30;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-  padding: 2rem;
-  text-align: center;
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      background-color: #1e1e30;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      padding: 2rem;
+      text-align: center;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-h1 {
-  font-family: 'Orbitron', sans-serif;
-  color: #ff4d6d;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 8px #ff4d6d;
-}
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff4d6d;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 8px #ff4d6d;
+    }
 
-.back a {
-  color: #ff4d6d;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-.back a:hover {
-  color: #ff758c;
-}
+    .back a {
+      color: #ff4d6d;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    .back a:hover {
+      color: #ff758c;
+    }
 
-.anime-header img {
-  width: 350px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #ff4d6d;
-  margin-bottom: 2rem;
-  transition: transform 0.3s ease;
-}
-.anime-header img:hover {
-  transform: scale(1.05);
-}
+    .anime-header img {
+      width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ff4d6d;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .anime-header img:hover {
+      transform: scale(1.05);
+    }
 
-#videoPlayer, #iframePlayer {
-  width: 90%;
-  max-width: 900px;
-  border-radius: 15px;
-  box-shadow: 0 0 30px #ff4d6d;
-  margin-bottom: 2.5rem;
-  outline: none;
-  background-color: #000;
-}
+    .player-container {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
 
-#iframePlayer {
-  height: 506px; /* 16:9 ratio for 900px width */
-  border: none;
-  display: none;
-  margin-left: auto;
-  margin-right: auto;
-}
+    #videoPlayer, #iframePlayer {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 30px #ff4d6d;
+      outline: none;
+      background-color: #000;
+    }
 
-#videoPlayer {
-  display: block;
-}
+    #iframePlayer {
+      height: 506px; 
+      border: none;
+      display: none;
+    }
 
-.episode-list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.2rem;
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto 3rem auto;
-}
+    #videoPlayer {
+      display: none;
+    }
 
-.episode-list button {
-  background-color: #2a2a40;
-  border: 2px solid transparent;
-  border-radius: 15px;
-  padding: 1.2rem 1rem;
-  color: #ff4d6d;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-  white-space: normal;
-  box-shadow: 0 0 10px #000;
-  font-size: 1rem;
-  line-height: 1.3;
-}
-.episode-list button:hover,
-.episode-list button.active {
-  background-color: #ff4d6d;
-  border-color: #ff758c;
-  color: #1e1e30;
-  box-shadow: 0 0 15px #ff758c;
-}
+    .episode-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.2rem;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto 3rem auto;
+      padding-top: 20px;
+    }
 
-@media (max-width: 1000px) {
-  .episode-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+    .episode-list button {
+      background-color: #2a2a40;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      padding: 1.2rem 1rem;
+      color: #ff4d6d;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: normal;
+      box-shadow: 0 0 10px #000;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+    .episode-list button:hover,
+    .episode-list button.active {
+      background-color: #ff4d6d;
+      border-color: #ff758c;
+      color: #1e1e30;
+      box-shadow: 0 0 15px #ff758c;
+      transform: translateY(-3px);
+    }
 
-@media (max-width: 600px) {
-  .episode-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    @media (max-width: 1000px) {
+      .episode-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
+    @media (max-width: 600px) {
+      .episode-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .anime-header img {
+        width: 100%;
+      }
+      
+      .player-container {
+        width: 100%;
+      }
+      
+      #iframePlayer {
+        height: 300px;
+      }
+    }
+
+    
+    .video-anchor {
+      scroll-margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -124,18 +144,22 @@ h1 {
     <a href="../../../anime.html">← Volver al catálogo</a>
   </div>
   <div class="anime-header">
-    <img src="https://pics.filmaffinity.com/Baki_Hanma_Serie_de_TV-969727790-large.jpg" alt="Naruto" />
+    <img src="https://pics.filmaffinity.com/Baki_Hanma_Serie_de_TV-969727790-large.jpg" alt="Shingeki No Kyojin" />
   </div>
-  <h1>Temporada 1 <br><br>
-  <iframe
-  id="iframePlayer"
-  src=""
-  allowfullscreen
-></iframe>
+  
+  
+  <div class="player-container video-anchor" id="playerTop">
+    <h1>Temporada 1</h1>
+    <iframe
+      id="iframePlayer"
+      src=""
+      allowfullscreen
+    ></iframe>
 
-<video id="videoPlayer" controls preload="metadata" style="display:none;">
-  Tu navegador no soporta video.
-</video>
+    <video id="videoPlayer" controls preload="metadata">
+      Tu navegador no soporta video.
+    </video>
+  </div>
 
   <div class="episode-list" role="list">
     <button onclick="changeVideo(this, 1)">Episodio 1<br>Sincronicidad</button>
@@ -151,13 +175,11 @@ h1 {
 <button onclick="changeVideo(this, 11)">Episodio 11<br>Cazador de tigres</button>
 <button onclick="changeVideo(this, 12)">Episodio 12<br>Dulces</button>
 <button onclick="changeVideo(this, 13)">Episodio 13<br>El Sr. Oliva</button>
-
-
   </div>
 
   <script>
-   const videos = {
-  1: { iframeSrc: "https://mega.nz/embed/vYdERT6B#_G7krFWVD5yM8yLXDtOKzwoK5Nl-6qKIeFuqnF1_Q_A" },
+    const videos = {
+      1: { iframeSrc: "https://mega.nz/embed/vYdERT6B#_G7krFWVD5yM8yLXDtOKzwoK5Nl-6qKIeFuqnF1_Q_A" },
   2: { iframeSrc: "https://mega.nz/embed/fAEWAJTI#eRdrQUCw6Dlv_dye0g6iqoG5knc1w9cOzffgjsxTcRg" },
   3: { iframeSrc: "https://mega.nz/embed/eYcSRLDS#UepL_aYTCf3LYo7X5DWWmUD2jc5a91YHHWDBuvODUYw" },
   4: { iframeSrc: "https://mega.nz/embed/KcdggL7L#3qU4x6wwHMYmupyqqZT0uGmW65KElstM9mOhE8xHHag" },
@@ -170,8 +192,7 @@ h1 {
   11: { iframeSrc: "https://mega.nz/embed/fRVGFThJ#a0PhUTJYjXwyZTMl7bmScrO6WB457KZS9Hq94ZdC8lA" },
   12: { iframeSrc: "https://mega.nz/embed/aEdCTRhC#JwlBiZjBnPT-FujFxFw18xD0H3t7nNCyA3jyNjujHNc" },
   13: { iframeSrc: "https://mega.nz/embed/WIM0iZCC#rYW4ZlRIbYkf1GWJIH5v3Nety0zhiN_1Xamw6x709n4" },
-};
-
+    };
 
     function changeVideo(button, episode) {
       const videoPlayer = document.getElementById('videoPlayer');
@@ -199,10 +220,29 @@ h1 {
         videoPlayer.play();
       }
 
-      document.querySelectorAll('.episode-list button').forEach(btn => btn.classList.remove('active'));
+      
+      document.querySelectorAll('.episode-list button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      
       button.classList.add('active');
+      
+      
+      document.getElementById('playerTop').scrollIntoView({
+        behavior: 'smooth'
+      });
     }
+
+    
+    window.addEventListener('load', function() {
+      if(window.location.hash) {
+        setTimeout(() => {
+          document.getElementById('playerTop').scrollIntoView();
+        }, 100);
+      }
+    });
   </script>
-  <h1>Temporada 2<br><br>
+  <h1>Temporada 2</h1>
 </body>
 </html>
