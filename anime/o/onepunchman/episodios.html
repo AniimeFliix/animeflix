@@ -57,7 +57,8 @@
       margin: 0 auto 2rem auto;
     }
 
-    #videoPlayer, #iframePlayer {
+    #videoPlayer, #iframePlayer,
+    #videoPlayer2, #iframePlayer2 {
       width: 100%;
       border-radius: 15px;
       box-shadow: 0 0 30px #ff4d6d;
@@ -65,13 +66,13 @@
       background-color: #000;
     }
 
-    #iframePlayer {
+    #iframePlayer, #iframePlayer2 {
       height: 506px; 
       border: none;
       display: none;
     }
 
-    #videoPlayer {
+    #videoPlayer, #videoPlayer2 {
       display: none;
     }
 
@@ -127,7 +128,7 @@
         width: 100%;
       }
       
-      #iframePlayer {
+      #iframePlayer, #iframePlayer2 {
         height: 300px;
       }
     }
@@ -147,7 +148,7 @@
     <img src="https://es.web.img3.acsta.net/pictures/17/02/27/17/41/046707.jpg" alt="Naruto" />
   </div>
   
-  
+  <!-- Reproductor para Temporada 1 -->
   <div class="player-container video-anchor" id="playerTop">
     <h1>Temporada 1</h1>
     <iframe
@@ -162,41 +163,80 @@
   </div>
 
   <div class="episode-list" role="list">
-    <button onclick="changeVideo(this, 1)">Episodio 1<br>El hombre más fuerte</button>
-<button onclick="changeVideo(this, 2)">Episodio 2<br>El cíborg solitario</button>
-<button onclick="changeVideo(this, 3)">Episodio 3<br>El científico obsesivo</button>
-<button onclick="changeVideo(this, 4)">Episodio 4<br>El ninja moderno</button>
-<button onclick="changeVideo(this, 5)">Episodio 5<br>El maestro supremo</button>
-<button onclick="changeVideo(this, 6)">Episodio 6<br>La ciudad aterradora</button>
-<button onclick="changeVideo(this, 7)">Episodio 7<br>El discípulo supremo</button>
-<button onclick="changeVideo(this, 8)">Episodio 8<br>El rey del mar profundo</button>
-<button onclick="changeVideo(this, 9)">Episodio 9<br>Justicia inquebrantable</button>
-<button onclick="changeVideo(this, 10)">Episodio 10<br>Peligro sin precedentes</button>
-<button onclick="changeVideo(this, 11)">Episodio 11<br>El conquistador del universo</button>
-<button onclick="changeVideo(this, 12)">Episodio 12<br>El héroe más fuerte</button>
+    <button onclick="changeVideo(this, 1, 'iframePlayer', 'videoPlayer')">Episodio 1<br>El hombre más fuerte</button>
+    <button onclick="changeVideo(this, 2, 'iframePlayer', 'videoPlayer')">Episodio 2<br>El cíborg solitario</button>
+    <button onclick="changeVideo(this, 3, 'iframePlayer', 'videoPlayer')">Episodio 3<br>El científico obsesivo</button>
+    <button onclick="changeVideo(this, 4, 'iframePlayer', 'videoPlayer')">Episodio 4<br>El ninja moderno</button>
+    <button onclick="changeVideo(this, 5, 'iframePlayer', 'videoPlayer')">Episodio 5<br>El maestro supremo</button>
+    <button onclick="changeVideo(this, 6, 'iframePlayer', 'videoPlayer')">Episodio 6<br>La ciudad aterradora</button>
+    <button onclick="changeVideo(this, 7, 'iframePlayer', 'videoPlayer')">Episodio 7<br>El discípulo supremo</button>
+    <button onclick="changeVideo(this, 8, 'iframePlayer', 'videoPlayer')">Episodio 8<br>El rey del mar profundo</button>
+    <button onclick="changeVideo(this, 9, 'iframePlayer', 'videoPlayer')">Episodio 9<br>Justicia inquebrantable</button>
+    <button onclick="changeVideo(this, 10, 'iframePlayer', 'videoPlayer')">Episodio 10<br>Peligro sin precedentes</button>
+    <button onclick="changeVideo(this, 11, 'iframePlayer', 'videoPlayer')">Episodio 11<br>El conquistador del universo</button>
+    <button onclick="changeVideo(this, 12, 'iframePlayer', 'videoPlayer')">Episodio 12<br>El héroe más fuerte</button>
+  </div>
 
+  <!-- Reproductor para Temporada 2 -->
+  <div class="player-container video-anchor" id="playerTop2">
+    <h1>Temporada 2</h1>
+    <iframe
+      id="iframePlayer2"
+      src=""
+      allowfullscreen
+    ></iframe>
+
+    <video id="videoPlayer2" controls preload="metadata">
+      Tu navegador no soporta video.
+    </video>
+  </div>
+
+  <div class="episode-list" role="list">
+    <button onclick="changeVideo(this, 13, 'iframePlayer2', 'videoPlayer2')">Episodio 13<br>El regreso del héroe</button>
+    <button onclick="changeVideo(this, 14, 'iframePlayer2', 'videoPlayer2')">Episodio 14<br>El kaijin humano</button>
+    <button onclick="changeVideo(this, 15, 'iframePlayer2', 'videoPlayer2')">Episodio 15<br>Comienza la cacería</button>
+    <button onclick="changeVideo(this, 16, 'iframePlayer2', 'videoPlayer2')">Episodio 16<br>Metal Bat</button>
+    <button onclick="changeVideo(this, 17, 'iframePlayer2', 'videoPlayer2')">Episodio 17<br>El torneo de artes marciales</button>
+    <button onclick="changeVideo(this, 18, 'iframePlayer2', 'videoPlayer2')">Episodio 18<br>El levantamiento de los kaijin</button>
+    <button onclick="changeVideo(this, 19, 'iframePlayer2', 'videoPlayer2')">Episodio 19<br>Los héroes clase S</button>
+    <button onclick="changeVideo(this, 20, 'iframePlayer2', 'videoPlayer2')">Episodio 20<br>La resistencia del más fuerte</button>
+    <button onclick="changeVideo(this, 21, 'iframePlayer2', 'videoPlayer2')">Episodio 21<br>Los problemas del más fuerte</button>
+    <button onclick="changeVideo(this, 22, 'iframePlayer2', 'videoPlayer2')">Episodio 22<br>Justicia bajo ataque</button>
+    <button onclick="changeVideo(this, 23, 'iframePlayer2', 'videoPlayer2')">Episodio 23<br>Las variantes del orgullo</button>
+    <button onclick="changeVideo(this, 24, 'iframePlayer2', 'videoPlayer2')">Episodio 24<br>El castigo al trasero del discípulo</button>
   </div>
 
   <script>
     const videos = {
- 1: { iframeSrc: "https://mega.nz/embed/s5UHjKzC#GIZnyvJDpc6VZhO4Q04ipHtHPS_8TOd8sCUk4ubS3d4" },
-  2: { iframeSrc: "https://mega.nz/embed/s0FjFKhB#sdZ263UW2cobXTS-azRcNL7gHX3NgRjzUArYRAnQGMA" },
-  3: { iframeSrc: "https://mega.nz/embed/Z4FzlIgb#_y-s6vTAg9JKCWirOwc3plYfbNjum8ryasHiDl5PPPc" },
-  4: { iframeSrc: "https://mega.nz/embed/wkFXgCrA#iWwiBlG_zJTHYxhCC91Z62fEmU6RvsFmC5DWyPWy2hw" },
-  5: { iframeSrc: "https://mega.nz/embed/80FXUALa#AgIwEJh0sby4GNOapMDElMSPToorPcyjWe3l06sZ3Ow" },
-  6: { iframeSrc: "https://mega.nz/embed/R8FD3IgT#bO9U7u-h_flakrV35fy6iCuDiac_pkEL38p5xO9XkUU" },
-  7: { iframeSrc: "https://mega.nz/embed/phETFK5I#ygQuapx6xMhZY2gprN62OTfiAp5A9_DWwvHh9Sp-Y74" },
-  8: { iframeSrc: "https://mega.nz/embed/1lEnGajJ#Dut74R84DYGvv4wC1PdKnuioccXaq6WIBBgi97CZu4M" },
-  9: { iframeSrc: "https://mega.nz/embed/glUjAQDR#i5tMFJol-hF-rjZgue7IlvlZLeTKW4GRJ5cv6KgLO-M" },
-  10: { iframeSrc: "https://mega.nz/embed/t8EXBADb#7SMDQahtbHYAHa2TN0k3QbjuV9ZsGWTPd1iFTRDBIm8" },
-  11: { iframeSrc: "https://mega.nz/embed/AhURFKKZ#LSvVo0SWVP3tl92vZT1QCM-bU3WOqWyydldNj1Z-x1o" },
-  12: { iframeSrc: "https://mega.nz/embed/RtNxEIBC#f7KPFyhjVqZPH6IbBbNil7r_1ZI3gyZbgZd74AtHe9Q" },
-  
+      1: { iframeSrc: "https://mega.nz/embed/s5UHjKzC#GIZnyvJDpc6VZhO4Q04ipHtHPS_8TOd8sCUk4ubS3d4" },
+      2: { iframeSrc: "https://mega.nz/embed/s0FjFKhB#sdZ263UW2cobXTS-azRcNL7gHX3NgRjzUArYRAnQGMA" },
+      3: { iframeSrc: "https://mega.nz/embed/Z4FzlIgb#_y-s6vTAg9JKCWirOwc3plYfbNjum8ryasHiDl5PPPc" },
+      4: { iframeSrc: "https://mega.nz/embed/wkFXgCrA#iWwiBlG_zJTHYxhCC91Z62fEmU6RvsFmC5DWyPWy2hw" },
+      5: { iframeSrc: "https://mega.nz/embed/80FXUALa#AgIwEJh0sby4GNOapMDElMSPToorPcyjWe3l06sZ3Ow" },
+      6: { iframeSrc: "https://mega.nz/embed/R8FD3IgT#bO9U7u-h_flakrV35fy6iCuDiac_pkEL38p5xO9XkUU" },
+      7: { iframeSrc: "https://mega.nz/embed/phETFK5I#ygQuapx6xMhZY2gprN62OTfiAp5A9_DWwvHh9Sp-Y74" },
+      8: { iframeSrc: "https://mega.nz/embed/1lEnGajJ#Dut74R84DYGvv4wC1PdKnuioccXaq6WIBBgi97CZu4M" },
+      9: { iframeSrc: "https://mega.nz/embed/glUjAQDR#i5tMFJol-hF-rjZgue7IlvlZLeTKW4GRJ5cv6KgLO-M" },
+      10: { iframeSrc: "https://mega.nz/embed/t8EXBADb#7SMDQahtbHYAHa2TN0k3QbjuV9ZsGWTPd1iFTRDBIm8" },
+      11: { iframeSrc: "https://mega.nz/embed/AhURFKKZ#LSvVo0SWVP3tl92vZT1QCM-bU3WOqWyydldNj1Z-x1o" },
+      12: { iframeSrc: "https://mega.nz/embed/RtNxEIBC#f7KPFyhjVqZPH6IbBbNil7r_1ZI3gyZbgZd74AtHe9Q" },
+      13: { iframeSrc: "https://mega.nz/embed/jvQUzCgL#JCUeW-7cvq6XucVUbWD2adv1Z2c4pcLoOb8WAS-8lSY" },
+      14: { iframeSrc: "https://mega.nz/embed/S7Z2iISa#gmmCfdyLmA6rQy8xh7w6zwSJgTI8dksiZKO4phUTI1Y" },
+      15: { iframeSrc: "https://mega.nz/embed/LiAgma6A#gVTXswhJMglO4kLjANlsq1p_Vo6GzOtAj5K-_kz_-NE" },
+      16: { iframeSrc: "https://mega.nz/embed/yjA2iIhC#DYgRrco4IaCcRC6jA9OObThecmv_o9gkZuxAVkKXBUU" },
+      17: { iframeSrc: "https://mega.nz/embed/auQGxARI#ohtOy17sw_j_LLBhtcYRBJb80ast5RtkFxMW4hjjqiw" },
+      18: { iframeSrc: "https://mega.nz/embed/O3BiEKhb#tlBeFsthkeYOLSbQXwNK9yd1Ke0VTduwRe-1YGXVGck" },
+      19: { iframeSrc: "https://mega.nz/embed/urQigKrR#Vg5Z0KHbqBHbKfA9SS5_Vf-4Zje8hj2vMM2ZVTXdRgE" },
+      20: { iframeSrc: "https://mega.nz/embed/e2Q21CiK#Ec8XAVymTlsTJ-b-vfX-onDmPh0KqDWoj6LrW4vp8rQ" },
+      21: { iframeSrc: "https://mega.nz/embed/vqYS0AyY#mKdWJyacW_JUZDhe6YwqTMnP0u6mdQX5sgT5zMRqyVU" },
+      22: { iframeSrc: "https://mega.nz/embed/e7YkgSRb#2KBu9VzhXXfYtKTgML9aNCfCV-XTxUyIZ4eJUvZ2jhg" },
+      23: { iframeSrc: "https://mega.nz/embed/KuZyGYRK#X8sBW_YsS3mtHvzT7HblTMDMSYt3DUYCqKEhW-QfIq8" },
+      24: { iframeSrc: "https://mega.nz/embed/6vQ2kQ7b#C1_2MUtNcYm9IrayG9fjsB7Y5orboVMLgmZoal1_hpQ" }
     };
 
-    function changeVideo(button, episode) {
-      const videoPlayer = document.getElementById('videoPlayer');
-      const iframePlayer = document.getElementById('iframePlayer');
+    function changeVideo(button, episode, iframeId, videoId) {
+      const videoPlayer = document.getElementById(videoId);
+      const iframePlayer = document.getElementById(iframeId);
 
       if(videos[episode].iframeSrc) {
         videoPlayer.style.display = 'none';
@@ -220,21 +260,27 @@
         videoPlayer.play();
       }
 
-      
-      document.querySelectorAll('.episode-list button').forEach(btn => {
+      // Remover clase active de todos los botones de la misma temporada
+      const seasonButtons = button.parentElement.querySelectorAll('button');
+      seasonButtons.forEach(btn => {
         btn.classList.remove('active');
       });
       
-      
+      // Añadir clase active al botón clickeado
       button.classList.add('active');
       
-      
-      document.getElementById('playerTop').scrollIntoView({
-        behavior: 'smooth'
-      });
+      // Scroll al reproductor correspondiente
+      if(iframeId === 'iframePlayer') {
+        document.getElementById('playerTop').scrollIntoView({
+          behavior: 'smooth'
+        });
+      } else {
+        document.getElementById('playerTop2').scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
     }
 
-    
     window.addEventListener('load', function() {
       if(window.location.hash) {
         setTimeout(() => {
@@ -243,8 +289,5 @@
       }
     });
   </script>
-  <h1>Temporada 2</h1><br>
-
-</div>
 </body>
 </html>
