@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AnimeFlix - Videos</title>
+  <link rel="icon" href="../../../3268b0130e0eb44aaf4ff4dfbf23aaca~tplv-tiktokx-cropcenter_1080_1080.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1e1e30;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      padding: 2rem;
+      text-align: center;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff4d6d;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 8px #ff4d6d;
+    }
+
+    .back a {
+      color: #ff4d6d;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    .back a:hover {
+      color: #ff758c;
+    }
+
+    .anime-header img {
+      width: 650px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ff4d6d;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .anime-header img:hover {
+      transform: scale(1.05);
+    }
+
+    .player-container {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
+
+    #videoPlayer, #iframePlayer {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 30px #ff4d6d;
+      outline: none;
+      background-color: #000;
+    }
+
+    #iframePlayer {
+      height: 506px; 
+      border: none;
+      display: none;
+    }
+
+    #videoPlayer {
+      display: none;
+    }
+
+    .episode-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.2rem;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto 3rem auto;
+      padding-top: 20px;
+    }
+
+    .episode-list button {
+      background-color: #2a2a40;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      padding: 1.2rem 1rem;
+      color: #ff4d6d;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: normal;
+      box-shadow: 0 0 10px #000;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+    .episode-list button:hover,
+    .episode-list button.active {
+      background-color: #ff4d6d;
+      border-color: #ff758c;
+      color: #1e1e30;
+      box-shadow: 0 0 15px #ff758c;
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 1000px) {
+      .episode-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .episode-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .anime-header img {
+        width: 100%;
+      }
+      
+      .player-container {
+        width: 100%;
+      }
+      
+      #iframePlayer {
+        height: 300px;
+      }
+    }
+
+    
+    .video-anchor {
+      scroll-margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Episodios de One Piece</h1>
+  <div class="back">
+    <a href="../../../anime.html">← Volver al catálogo</a>
+  </div>
+  <div class="anime-header">
+    <img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/a249096c7812deb8c3c2c907173f3774.jpg" alt="Naruto" />
+  </div>
+  
+  
+  <div class="player-container video-anchor" id="playerTop">
+    <h1>ROMANCE DAWN</h1>
+    <iframe
+      id="iframePlayer"
+      src=""
+      allowfullscreen
+    ></iframe>
+
+    <video id="videoPlayer" controls preload="metadata">
+      Tu navegador no soporta video.
+    </video>
+  </div>
+
+  <div class="episode-list" role="list">
+    <button onclick="changeVideo(this, 1)">Episodio 1<br>¡Soy Luffy! ¡El hombre que se convertirá en el Rey de los Piratas!</button>
+    <button onclick="changeVideo(this, 2)">Episodio 2<br>¡Aparece el gran espadachín! El cazador de piratas, Roronoa Zoro</button>
+    <button onclick="changeVideo(this, 3)">Episodio 3<br>¡Morgan vs. Luffy! ¿Quién es esa guapa muchacha?</button> 
+  </div>
+
+  <script>
+    const videos = {
+ 1: {        iframeSrc: "https://mega.nz/embed/I2sn2TTS#YytSsdxTUVaZc9wb6oZrrLpagSbnSAwMZWRXqbVcUsk"      },
+      2: {        iframeSrc: "https://mega.nz/embed/FutAXYCA#4DxxlxkKbnz7UcuTghFTv_Ws2XtH1s-Ohp1N6p8LuD8"      },
+      3: {        iframeSrc: "https://mega.nz/embed/tr9wQBBI#ie57mt1eWW03vutdGsj1_5cwDgUsFp51bzure9iCM-g"      },
+      4: {        iframeSrc: "https://mega.nz/embed/N2FCDJjL#s0sk3C0I-_mL1R7bu5qtcMW1gfLJ3RVtPsRR4Y-p7FM"      },
+      5: {        iframeSrc: "https://mega.nz/embed/xzUHxbDL#At21avl31JgWmfvZzrEAc7oZnM7-9LXmxqd0pNgoQd0"      },
+      6: {        iframeSrc: "https://mega.nz/embed/Zqs3ARZT#OKx9TQlF2Sy5bF3oh8UZGT2LUsDT60fLyAI-Diillqg"      },
+      7: {        iframeSrc: "https://mega.nz/embed/ZiMECCiS#H8sNcnE8ukcvlC0ZfN2e5mY2CbyYjSdtMm4xkArfrhI"      },
+      8: {        iframeSrc: "https://mega.nz/embed/RudxjB6A#ZxWsGN1NLJGGiEkArnjbT-tCARpI2LsTVBI2DOIAkk0"      },
+      9: {        iframeSrc: "https://mega.nz/embed/sycmETpD#5IZNqUdC7DJsS6rfYZLIaYbtUY9_2uTutM_QkUh7AIc"      },
+      10: {        iframeSrc: "https://mega.nz/embed/N78CVR7J#asjqW1CtwqfMnQ8yENaxeXIT8Mw-_4puiMrKSg3g_hw"      },
+      11: { iframeSrc: "https://mega.nz/embed/59kD2AqY#mKinXuJ2XyDqtp-yRB3w6xTAX_zX4NafE8DPkzLTbSc" },
+      12: { iframeSrc: "https://mega.nz/embed/B58UjAJT#gg1hjIVaq9CbGNayZB6soKRWtSDqz8UpfLJIcf0STgo" },
+     13: { iframeSrc: "https://mega.nz/embed/phMCQAbT#Qiukd0809KkkdquM5OyBI4YzNWsWZyxy7WM4-yq2wdc" },
+     14: { iframeSrc: "https://mega.nz/embed/xscR2IwL#U16qXWeACGqLqgJBixIgbrUtovNNc1RvtszfbD07ja4" },
+     15: { iframeSrc: "https://mega.nz/embed/psFUla6B#IL7ud8fVlzTZpFaxOWo3dM2h88ypG7YX131k_ow-XKw" },
+      16: { iframeSrc: "https://mega.nz/embed/55tHmKTL#sKmWkip7BlernpuX11s1ci9blvYIhn-fNSzRt_RxFGw" },
+     17: { iframeSrc: "https://mega.nz/embed/lwkWAIRB#GWvZjM8UoAaK7Zhx4qUgEmPK4r0zRDXnI2A-3WeXuBs" },
+      18: { iframeSrc: "https://mega.nz/embed/U9kD0C7R#GYuBRUi6ppRpaqekyXHkiio6VqPq6mLH5IpDJNvRtEU" },
+      19: { iframeSrc: "https://mega.nz/embed/00F1gJaA#eYNG7z8bsF0mv-ZMPBZWfeetfKdNyf9iqksyoDvT99w" },
+20: { iframeSrc: "https://mega.nz/embed/EetDVSIC#BeV5LYQH1sH2eG3OuHvrt9mjWHtVsO96SAT7O_RB5fk" },
+21: { iframeSrc: "https://mega.nz/embed/89tFgYqT#Vom828F8xaPGR4a_U7VQQmY1GXddn28zh15BsqbGHiE" },
+22: { iframeSrc: "https://mega.nz/embed/Q81kkYQK#oYBozdoLWvpUQIuItabTmybkEFkXYrDnDCfObGSFpPY" },
+23: { iframeSrc: "https://mega.nz/embed/hgd2lKKC#3pLVYxXkyUAGr53OwzEmTJ6TjZKWVDVKlb334TaZHVg" },
+24: { iframeSrc: "https://mega.nz/embed/E0kilCYI#9AuyBwb7YLgKXESNk87mumDxn6xKSrMkCqpz0lZf4Qg" },
+25: { iframeSrc: "https://mega.nz/embed/VkkiQaCZ#LwiZQQYEvqws7ZEZrSTV9Frph5KrccAfoW42aQ7qj1E" },
+26: { iframeSrc: "https://mega.nz/embed/49VRmKSD#drD9ewo9t_9FS06ZqTIm-9qshfAQ6GunCScXdS3F23c" },
+27: { iframeSrc: "https://mega.nz/embed/49VwRJSK#9GKNbTlbweyyLyN07gv9fPdidSIDduTterhh0Fi4OJA" },
+28: { iframeSrc: "https://mega.nz/embed/d9VzTBxD#wdIkAOuxlNdxQP2sA5xAnxwHFUEZhbA9fLbjfwXjy5I" },
+29: { iframeSrc: "https://mega.nz/embed/M48EVKJK#IAaCtb2_iljLYi5jyVhoI7rwBGMrdphZ4vPwVzU08D4" },
+30: { iframeSrc: "https://mega.nz/embed/pfMiCIiT#WjfrDLskPJSLb4F33derzKS0W1S02WlZd01dyM_EnOU" },
+31: { iframeSrc: "https://mega.nz/embed/ElEAHSZZ#5dsPlXy2qUGb3wW2HDJbw_9ieW9f2DB-qapmijgxujc" },
+32: { iframeSrc: "https://mega.nz/embed/0xNUlayR#igmTc-Z5RSk6gmrMVeMaiPfsMRl08CCuLZW92_-sqc0" },
+33: { iframeSrc: "https://mega.nz/embed/p510iJhT#22UxOPv_hzCidG81Prw_i6Q2kUv9cF070GhRNqebIhI" },
+34: { iframeSrc: "https://mega.nz/embed/N1dBmBRZ#-p71b52RetELzH0gxUYgbysG7WlVgL0KiQTP19RkTrY" },
+35: { iframeSrc: "https://mega.nz/embed/E8830YpI#2bGgzvrGAvB9GQ6zmtQOQXgxdKhn928OMjg-hWCMFN8" },
+36: { iframeSrc: "https://mega.nz/embed/kl8HzTZQ#2ebmfMoi352ckjQXw4RRy_lhh_uo1AdXODtKD9d2W9U" },
+37: { iframeSrc: "https://mega.nz/embed/lotU2BLL#BiH9_CWMRsabaN3U7M7WRHvafAUPf9ab35662paE7ss" },
+38: { iframeSrc: "https://mega.nz/embed/o4MWUYDS#pBdq-j2fk7ZL1Ut8zoivDI1H2zcizIXjcdudgSEtOB0" },
+39: { iframeSrc: "https://mega.nz/embed/N0dTlCJQ#veAZmsiQjVcT5bMtEKneTV3nMixZTxa-GOFUVls8_6k" },
+40: { iframeSrc: "https://mega.nz/embed/Yp9ViQiI#EwE6395aDzhojPDsikeE4xTxElQJKWdew5oUdukc9F0" },
+41: { iframeSrc: "https://mega.nz/embed/UlFxBQrJ#TcG3x3eUcl9bp0rbifdZjbNoLCmXeKf9khmTVZPdi-w" },
+42: { iframeSrc: "https://mega.nz/embed/l48n2KqC#EwECswaK6xBAuCdBcn3aFQEl8yByqpWCp5OazmrEC7c" },
+43: { iframeSrc: "https://mega.nz/embed/4ptEhR4R#EMa9ZTYDJTXPRdW4-1TX095mvxjVOYcYqO_ICNSLtGA" },
+44: { iframeSrc: "https://mega.nz/embed/sxEjEByK#FG8n535B2VmBikow0-ofirD6E4UAvKDHi87e9n_I20U" },
+45: { iframeSrc: "https://mega.nz/embed/dk0kUbBa#TMSx59zAWx7N3r3C5Jmguxw87890YOkGRUvdh1v0QY0" },
+46: { iframeSrc: "https://mega.nz/embed/EGV13YSQ#TZa9RJPqidI2v-lCjdstXH35FbojTARDV_FscloL8C4" },
+47: { iframeSrc: "https://mega.nz/embed/lgFyxYRC#vnGjh8HmTe2_VqdJyPkBLezVXPAovkSS3KF26PiD2r4" },
+      
+    };
+
+    function changeVideo(button, episode) {
+      const videoPlayer = document.getElementById('videoPlayer');
+      const iframePlayer = document.getElementById('iframePlayer');
+
+      if(videos[episode].iframeSrc) {
+        videoPlayer.style.display = 'none';
+        iframePlayer.style.display = 'block';
+        iframePlayer.src = videos[episode].iframeSrc;
+      } else {
+        iframePlayer.style.display = 'none';
+        iframePlayer.src = '';
+        videoPlayer.style.display = 'block';
+
+        while (videoPlayer.firstChild) {
+          videoPlayer.removeChild(videoPlayer.firstChild);
+        }
+        videos[episode].sources.forEach(sourceData => {
+          const source = document.createElement('source');
+          source.src = sourceData.src;
+          source.type = sourceData.type;
+          videoPlayer.appendChild(source);
+        });
+        videoPlayer.load();
+        videoPlayer.play();
+      }
+
+      
+      document.querySelectorAll('.episode-list button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      
+      button.classList.add('active');
+      
+      
+      document.getElementById('playerTop').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    
+    window.addEventListener('load', function() {
+      if(window.location.hash) {
+        setTimeout(() => {
+          document.getElementById('playerTop').scrollIntoView();
+        }, 100);
+      }
+    });
+  </script>
+  <h1>ORANGE TOWN</h1><br>
+<div class="episode-list" role="list">  
+  <button onclick="changeVideo(this, 4)">Episodio 4<br>¡El pasado de Luffy! El pelirrojo Shanks aparece</button>
+  <button onclick="changeVideo(this, 5)">Episodio 5<br>¡Teme el misterioso poder! ¡El capitán payaso Buggy!</button>    
+    <button onclick="changeVideo(this, 6)">Episodio 6<br>¡Situación desesperada! ¡Mohji el domador de bestias vs. Luffy!</button>    
+    <button onclick="changeVideo(this, 7)">Episodio 7<br>¡Gran duelo! ¡Zoro el espadachín vs. Cabaji el acróbata!</button>    
+    <button onclick="changeVideo(this, 8)">Episodio 8<br>¿Quién ganará? ¡Duelo entre los usuarios de las frutas del diablo!</button> 
+
+</div>
+<h1>SYRUP VILLAGE</h1><br>
+<div class="episode-list" role="list">  
+  <button onclick="changeVideo(this, 9)">Episodio 9<br>¿Honorable mentiroso? Capitán Usopp</button>
+    <button onclick="changeVideo(this, 10)">Episodio 10<br>¡El hombre más raro del mundo! Jango el hipnotizador</button>
+    <button onclick="changeVideo(this, 11)">Episodio 11<br>Revelando la Conspiración! el Pirata enmascarado, Captain Kuro!</button>
+<button onclick="changeVideo(this, 12)">Episodio 12<br>Batalla! La tripulación Pirata del Gato Negro. Combate en la Costa!</button>
+<button onclick="changeVideo(this, 13)">Episodio 13<br>El Dúo aterrador! Los Hermanos Nyaban VS Zoro</button>
+<button onclick="changeVideo(this, 14)">Episodio 14<br>Luffy Revive! Kaya-ojousama confrontación al borde la vida y la muerte</button>
+<button onclick="changeVideo(this, 15)">Episodio 15<br>Derrotar a Kuro! la determinación de Usopp!</button>
+<button onclick="changeVideo(this, 16)">Episodio 16<br>Proteger a Kaya! los Piratas de Usopp entran en Acción!</button>
+<button onclick="changeVideo(this, 17)">Episodio 17<br>Completamente enfurecido! Kuro VS Luffy, Batalla Final!</button>
+<button onclick="changeVideo(this, 18)">Episodio 18<br>	Eres un animal Especial! Gaimon y sus nakamas</button>
+
+</div>
+
+<h1>BARATIE</h1><br>
+<div class="episode-list" role="list">  
+  <button onclick="changeVideo(this, 19)">Episodio 19<br>El pasado de las tres espadas! La promesa entre Zoro y Kuina!</button>
+<button onclick="changeVideo(this, 20)">Episodio 20<br>El famoso cocinero! Sanji del restaurante flotante</button>
+<button onclick="changeVideo(this, 21)">Episodio 21<br>Un huesped inesperado! La comida de Sanji y la gracia de Gin</button>
+<button onclick="changeVideo(this, 22)">Episodio 22<br>La flota pirata mas Grande: Capitán Don Krieg</button>
+<button onclick="changeVideo(this, 23)">Episodio 23<br>Proteger el Baratie! El gran pirata: Zeff "Pierna Roja"</button>
+<button onclick="changeVideo(this, 24)">Episodio 24<br>"Ojos de Halcón" Mihawk! El Espadachín Zoro cae al mar!</button>
+<button onclick="changeVideo(this, 25)">Episodio 25<br>Emerge la magnifica habilidad con las Perlas de Hierro: Sanji VS Pearl "Muro de Hierro"</button>
+<button onclick="changeVideo(this, 26)">Episodio 26<br>El sueño de Sanji y Zeff: El mar de los Sueños - All Blue</button>
+<button onclick="changeVideo(this, 27)">Episodio 27<br>El demonio sin corazón: Gin, el comandante de la Flota Pirata</button>
+<button onclick="changeVideo(this, 28)">Episodio 28<br>No voy a morir! Conclusión: Luffy VS Krieg</button>
+<button onclick="changeVideo(this, 29)">Episodio 29<br>Resultado de una batalla mortal! La lanza!</button>
+<button onclick="changeVideo(this, 30)">Episodio 30<br>Partida! el cocinero del mar y Luffy viajan juntos!</button>
+
+</div>
+
+<h1>ARLONG PARK</h1><br>
+<div class="episode-list" role="list">  
+  <button onclick="changeVideo(this, 31)">Episodio 31<br>El hombre mas travieso del East Blue! El Gyojin Pirata Arlong</button>
+  <button onclick="changeVideo(this, 32)">Episodio 32<br>La Bruja de la Villa Cocoyasi, la oficial mujer de Arlong</button>
+  <button onclick="changeVideo(this, 33)">Episodio 33<br>La muerte de Usopp?! Luffy aun no aparece?</button>
+  <button onclick="changeVideo(this, 34)">Episodio 34<br>Reunidos! Usopp cuenta la verdad sobre Nami</button>
+  <button onclick="changeVideo(this, 35)">Episodio 35<br>El pasado oculto! La mujer guerrera Bellemere!</button>
+  <button onclick="changeVideo(this, 36)">Episodio 36<br>Sobrevive! La madre Bellemere y la familia de Nami!</button>
+  <button onclick="changeVideo(this, 37)">Episodio 37<br>Luffy se levanta! El final de una promesa rota!</button>
+  <button onclick="changeVideo(this, 38)">Episodio 38<br>Luffy en apuros! Luffy vs. los Piratas Gyojin!</button>
+  <button onclick="changeVideo(this, 39)">Episodio 39<br>La caída de Luffy! Zoro vs. el pulpo Hatchan!</button>
+  <button onclick="changeVideo(this, 40)">Episodio 40<br>Los guerreros orgullosos en alto! La dramática batalla de Sanji y Usopp!</button>
+  <button onclick="changeVideo(this, 41)">Episodio 41<br>	Lo mejor de Luffy! El valor de Nami y el Sombrero de Paja</button>
+  <button onclick="changeVideo(this, 42)">Episodio 42<br>	Estalla su exterior! El Gyojin Arlong, terrible ataque desde el mar!</button>
+  <button onclick="changeVideo(this, 43)">Episodio 43<br>Fin del Imperio Gyojin! Nami es mi nakama!</button>
+  <button onclick="changeVideo(this, 44)">Episodio 44<br>Partiendo con una sonrisa! Hasta siempre mi hogar, Villa Cocoyasi!</button>
+  <button onclick="changeVideo(this, 45)">Episodio 45<br>Recompensa! Sombrero de Paja Luffy se hace mundialmente famoso!</button>
+
+</div>
+
+<h1>AVENTURAS DE LA TRIPULACIÓN DE BUGGY</h1><br>
+<div class="episode-list" role="list">  
+  <button onclick="changeVideo(this, 46)">Episodio 46<br>Tras los Sombreros de Paja! La gran aventura del pequeño Buggy</button>
+  <button onclick="changeVideo(this, 47)">Episodio 47<br>Lo estabas esperando! El regreso del Capitán Buggy!</button>
+  
+</div>
+
+
+</body>
+</html>
